@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    componentDisplayed: String = 'Recipes';
+    //componentDisplayed: String = 'Recipes';
 
-    componentToShow(linkCliked: String) {
-        this.componentDisplayed = linkCliked;
-    }
+    //componentToShow(linkCliked: String) {
+    //    this.componentDisplayed = linkCliked;
+    //}
 }

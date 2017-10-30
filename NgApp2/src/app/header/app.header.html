@@ -14,8 +14,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li [ngClass]="{'active': activeLink==='Recipes'}"><a href="#" (click)="onSelect('Recipes')">Recipes <span class="sr-only">(current)</span></a></li>
-        <li [ngClass]="{'active': activeLink==='ShoppingList'}"><a href="#" (click)="onSelect('ShoppingList')">Shopping List</a></li>
+        <li role="presentation" routerLinkActive="active"><a [routerLink]="['/recipes']">Recipes<span class="sr-only">(current)</span></a></li>
+        <li role="presentation" routerLinkActive="active"><a [routerLink]="['/shoppinglist']">Shopping List</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>

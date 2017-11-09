@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from '../recipe.model'
-import { RecipeService } from "../recipe.service";
-import { ActivatedRoute, Params, Router } from "@angular/router";
+import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipes-details',
@@ -37,7 +37,7 @@ export class RecipesDetailsComponent implements OnInit {
 
   onEditRecipe() {
     this.router.navigate(['edit'], { relativeTo: this.route });
-    //this.router.navigate(['../', this.id,'edit'], { relativeTo: this.route });  // for demo purpose
+    // this.router.navigate(['../', this.id,'edit'], { relativeTo: this.route });  // for demo purpose
 
   }
 

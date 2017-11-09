@@ -1,7 +1,7 @@
-import { Recipe } from "./recipe.model";
-import { EventEmitter, Injectable } from "@angular/core";
-import { Ingredient } from "../shared/ingredient.model";
-import { ShoppingListService } from "../shoppinglist/shopping-list.service";
+import { Recipe } from './recipe.model';
+import { EventEmitter, Injectable } from '@angular/core';
+import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from '../shoppinglist/shopping-list.service';
 
 @Injectable()
 export class RecipeService {
@@ -13,7 +13,7 @@ export class RecipeService {
           new Ingredient('pound whole-wheat pizza dough', 1),
           new Ingredient('ounces boneless, skinless chicken breast, trimmed', 12),
           new Ingredient('cups chopped broccolini or broccoli', 4)
-          
+
       ]),
     new Recipe('Nut & Berry Parfait',
       'In this quick high-protein breakfast recipe, Greek yogurt is topped with healthy berries and almonds and lightly sweetened with honey.',
@@ -28,7 +28,7 @@ export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
 
 
-  constructor(private slService: ShoppingListService){}
+  constructor(private slService: ShoppingListService) {}
 
   getRecipes() {
     return this.recipeItems.slice();

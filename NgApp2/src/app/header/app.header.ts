@@ -5,7 +5,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
   templateUrl: './app.header.html',
   styleUrls: ['./app.header.css']
 })
-export class AppHeader {
+export class AppHeaderComponent {
     activeLink: String = 'Recipes';
     @Output() linkCliked = new EventEmitter<String>();
 

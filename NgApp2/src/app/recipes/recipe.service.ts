@@ -2,9 +2,13 @@ import { Recipe } from './recipe.model';
 import { Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shoppinglist/shopping-list.service';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class RecipeService {
+
+  recipesChanged = new Subject<Recipe[]>();
+
   private recipeItems: Recipe[] = [
       new Recipe('Broccoli Rabe & Chicken White Pizza',
       'The bold flavors of garlic, crushed red pepper and lemon make up for the fact that this white chicken pizza recipe has less sodium than a typical pizza. Not a fan of bitter greens? Opt for broccolini or broccoli instead. To save time, look for prepared whole-wheat pizza dough at your supermarket, fresh or frozen, made without partially hydrogenated oils.',
@@ -38,6 +42,21 @@ export class RecipeService {
 
   addIngredientsToSL(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
+  }
+
+  addRecipe(newRecipe: Recipe) {
+    this.recipeItems.push(newRecipe);
+    this.recipesChanged.next(this.recipeItems.slice());
+  }
+
+  updateRecipe(index: number, newRecipe: Recipe) {
+    this.recipeItems[index] = newRecipe;
+    this.recipesChanged.next(this.recipeItems.slice());
+  }
+   
+  deleteRecipe(index: number) {
+    this.recipeItems.splice(index, 1);
+    this.recipesChanged.next(this.recipeItems.slice());
   }
 
 }

@@ -27,7 +27,7 @@ export class ShoppinglisteditComponent implements OnInit, OnDestroy {
         this.editedItem = this.shoppingList.getIngredient(index);
         this.slForm.setValue({
           name: this.editedItem.name,
-          quantity: this.editedItem.amount
+          quantity: this.editedItem.quantity
         });
      }
    );
@@ -47,7 +47,7 @@ export class ShoppinglisteditComponent implements OnInit, OnDestroy {
     }
     this.editMode = false;
     this.slForm.reset();
-    // this.ingredient.emit(new Ingredient(nameInput.value, this.amountInput.nativeElement.value));
+    // this.ingredient.emit(new Ingredient(nameInput.value, this.quantityInput.nativeElement.value));
   }
 
   resetForm() {

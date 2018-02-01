@@ -23,7 +23,7 @@ export class AppHeaderComponent {
         this.dataStorageService.storeRecipes()
             .subscribe(
                 (response: Response) => {
-                    console.log(response);
+                   // console.log(response);
                 }
             );
     }

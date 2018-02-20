@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { DataStorageService } from '../shared/data-storage.service';
+import { DataStorageService } from '../../shared/data-storage.service';
 import { Response } from '@angular/http';
-import { AuthService } from '../auth/auth.service';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,14 +9,6 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./app.header.css']
 })
 export class AppHeaderComponent {
-    // activeLink: String = 'Recipes';
-    // @Output() linkCliked = new EventEmitter<String>();
-
-    // onSelect(linkClicked: String) {
-    //     this.activeLink = linkClicked;
-    //     this.linkCliked.emit(this.activeLink);
-
-    // }
 
     constructor(private dataStorageService: DataStorageService,
             private authService: AuthService) {}
@@ -37,5 +29,9 @@ export class AppHeaderComponent {
     onLogout() {
         this.authService.logout();
     }
+
+    isAuthenticated() {
+        return this.authService.isAuthenticated();
+      }
 
 }

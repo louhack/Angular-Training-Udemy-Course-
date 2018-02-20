@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppHeaderComponent } from './header/app.header';
 import { DropdownDirective } from './shared/DropdownDirective';
 import { ShoppingListService } from './shoppinglist/shopping-list.service';
 import { DataStorageService } from './shared/data-storage.service';
@@ -16,13 +15,11 @@ import { RecipeService } from './recipes/recipe.service';
 import { SharedModule } from './shared/shared.module';
 import { ShoppingListModule } from './shoppinglist/shoppinglist.module';
 import { AuthModule } from './auth/auth.module';
-import { HomeComponent } from './home/home.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
     declarations: [
     AppComponent,
-    AppHeaderComponent,
-    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,8 +28,8 @@ import { HomeComponent } from './home/home.component';
     SharedModule,
     ShoppingListModule,
     AuthModule,
+    CoreModule,
   ],
-  providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

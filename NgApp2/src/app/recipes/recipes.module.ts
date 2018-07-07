@@ -8,7 +8,6 @@ import { RecipelistComponent } from './recipelist/recipelist.component';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import { RecipeitemComponent } from './recipelist/recipeitem/recipeitem.component';
 import { RecipesDetailsComponent } from './recipes-details/recipes-details.component';
-import { DropdownDirective } from '../shared/DropdownDirective';
 import { RecipesRoutingModule } from './recipes-routing.module';
 import { SharedModule } from '../shared/shared.module';
 

@@ -1,6 +1,7 @@
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+import { DataStorageService } from '../shared/data-storage.service';
 
 @Injectable()
 export class AuthService {
@@ -21,10 +22,12 @@ export class AuthService {
             .then(
                 response => {
                     this.router.navigate(['/']);
-                    firebase.auth().currentUser.getToken()
+                    firebase.auth().currentUser.getIdToken()
                         .then(
-                            (token: string) => this.token = token
-                        );
+                            (token: string) => {
+                              this.token = token;
+                            // this.dataStorageService.fetchRecipes();
+                            });
                 }
             )
             .catch(
@@ -33,7 +36,7 @@ export class AuthService {
     }
 
     getToken() {
-        firebase.auth().currentUser.getToken()
+        firebase.auth().currentUser.getIdToken()
             .then(
                 (token: string) => this.token = token
         );
